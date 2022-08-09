@@ -27,6 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		
 		// Database should store roles as: ROLE_USER, ROLE_ADMIN
+		// Configure from most to least restrictive
 		
 		http.authorizeRequests()
 			.antMatchers("/admin").hasRole("ADMIN")
